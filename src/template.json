@@ -25,13 +25,13 @@
       "snapshot_groups": "{{user `SnapshotGroups`}}",
       "source_ami_filter": {
         "filters": {
-          "name": "ubuntu/images/*ubuntu-jammy-22.04-amd64-server-*",
+          "name": "al2023-ami-*-kernel-*-x86_64",
           "root-device-type": "ebs",
           "virtualization-type": "hvm"
         },
         "most_recent": true,
         "owners": [
-          "099720109477"
+          "137112412989"
         ]
       },
       "ssh_username": "{{user `SshUsername`}}",
@@ -72,7 +72,7 @@
     "InstanceType": "t3.nano",
     "OwnerEmail": "it@sagebase.org",
     "SnapshotGroups": "all",
-    "SshUsername": "ubuntu",
+    "SshUsername": "ec2-user",
     "VolumeSize": "16",
     "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
     "aws_profile": "{{env `AWS_PROFILE`}}",

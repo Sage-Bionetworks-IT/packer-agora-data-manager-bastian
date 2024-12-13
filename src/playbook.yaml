@@ -3,12 +3,23 @@
   become: true
 
   tasks:
+    - name: Add repositories
+      ansible.builtin.yum_repository:
+        name: mongodb
+        description: MongoDB repo
+        baseurl: https://repo.mongodb.org/yum/amazon/2023/mongodb-org/8.0/x86_64/
+        gpgcheck: true
+        gpgkey: https://pgp.mongodb.com/server-8.0.asc
+
     - name: Install packages
-      ansible.builtin.apt:
+      ansible.builtin.dnf:
         state: present
         update_cache: true
         pkg:
-          - "python3-pip"
+          - python
+          - python-pip
+          - mongodb-mongosh-shared-openssl3
+          - mongodb-database-tools
 
     - name: Install python packages
       ansible.builtin.pip:
