@@ -13,7 +13,7 @@
       "launch_block_device_mappings": [
         {
           "delete_on_termination": true,
-          "device_name": "/dev/sda1",
+          "device_name": "/dev/xvda",
           "volume_size": "{{user `VolumeSize`}}",
           "volume_type": "gp3"
         }
@@ -69,11 +69,11 @@
   "variables": {
     "AmiGroups": "all",
     "EncryptBoot": "false",
-    "InstanceType": "t3.nano",
+    "InstanceType": "t3.micro",
     "OwnerEmail": "it@sagebase.org",
     "SnapshotGroups": "all",
     "SshUsername": "ec2-user",
-    "VolumeSize": "16",
+    "VolumeSize": "64",
     "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
     "aws_profile": "{{env `AWS_PROFILE`}}",
     "aws_region": "{{env `AWS_DEFAULT_REGION`}}",
