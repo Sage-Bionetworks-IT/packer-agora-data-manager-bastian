@@ -20,7 +20,6 @@
       ],
       "profile": "{{user `aws_profile`}}",
       "region": "{{user `aws_region`}}",
-      "temporary_key_pair_type": "ed25519",
       "secret_key": "{{user `aws_secret_key`}}",
       "shutdown_behavior": "terminate",
       "snapshot_groups": "{{user `SnapshotGroups`}}",
@@ -43,6 +42,7 @@
         "SourceAmiId": "{{ .SourceAMI }}",
         "SourceAmiName": "{{ .SourceAMIName }}"
       },
+      "temporary_key_pair_type": "ed25519",
       "token": "{{user `aws_session_token`}}",
       "type": "amazon-ebs"
     }
